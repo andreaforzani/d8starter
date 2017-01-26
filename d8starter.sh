@@ -5,23 +5,23 @@ alias drush8='~/drush8/vendor/bin/drush'
 
 # Site
 ##########################################################
-siteName="Drupal 8 Site"
-siteSlogan="Test drupal 8 site"
+siteName="YourSiteNAme"
+siteSlogan="Your Site Slogan"
 siteLocale="en"
 ##########################################################
 
 # Database
 ##########################################################
 dbHost="localhost"
-dbName="d8test"
-dbUser="root"
-dbPassword="root"
+dbName="yourdbname"
+dbUser="yourdbuser"
+dbPassword="yourdbpassword"
 ##########################################################
 
 # Admin
 ##########################################################
-AdminUsername="andrea"
-AdminPassword="qpwoeiru"
+AdminUsername="adminusername"
+AdminPassword="adminpassword!"
 adminEmail="admin@mail.com"
 ##########################################################
 
@@ -52,110 +52,93 @@ echo -e "////////////////////////////////////////////////////"
 ##########################################################
 drush8 site-install -y standard --account-mail=$adminEmail --account-name=$AdminUsername --account-pass=$AdminPassword --site-name=$siteName --site-mail=$adminEmail --locale=$siteLocale --db-url=mysql://$dbUser:$dbPassword@$dbHost/$dbName;
 
-# echo -e "////////////////////////////////////////////////////"
-# echo -e "// Download modules and themes"
-# echo -e "////////////////////////////////////////////////////"
+echo -e "////////////////////////////////////////////////////"
+echo -e "// Download modules and themes"
+echo -e "////////////////////////////////////////////////////"
 
 # Download modules and themes
 ##########################################################
-# drush8 -y dl \
-# admin_views \
-# adminimal_theme \
-# backup_migrate \
-# ctools \
-# ckeditor \
-# ckeditor_link \
-# coder \
-# date \
-# devel \
-# diff \
-# entity \
-# eu_cookie_compliance \
-# features \
-# fences \
-# field_group \
-# globalredirect \
-# imce \
-# jquery_update \
-# libraries \
-# masquerade \
-# menu_block \
-# metatag \
-# module_filter \
-# navbar \
-# navbar_flush_cache \
-# pathauto \
-# redirect \
-# simplified_menu_admin \
-# social_media_links \
-# strongarm \
-# token \
-# views \
-# views_bulk_operations \
-# webform \
-# xmlsitemap \
-# zen;
+drush8 -y dl \
+admin_toolbar \
+adminimal_admin_toolbar \
+adminimal_theme \
+backup_migrate \
+ctools \
+devel \
+diff \
+entity \
+eu_cookie_compliance \
+features \
+fences \
+field_group \
+globalredirect \
+imce \
+libraries \
+linkit \
+masquerade \
+menu_block \
+metatag \
+module_filter \
+pathauto \
+redirect \
+social_media_links \
+token \
+toolbar_anti_flicker \
+toolbar_menu \
+webform \
+simple_sitemap \
+basic;
 
 # Disable some core modules
 ##########################################################
-# drush8 -y dis \
-# overlay \
+# drush8 -y pm-uninstall \
 # toolbar;
 
-# mv sites/all/modules/contrib/devel sites/all/modules/devel;
-# mv sites/all/modules/contrib/coder sites/all/modules/devel;
-# mv sites/all/modules/contrib/diff sites/all/modules/devel;
+mv modules/contrib/devel modules/devel;
+mv modules/contrib/coder modules/devel;
+mv modules/contrib/diff modules/devel;
 
-# echo -e "////////////////////////////////////////////////////"
-# echo -e "// Enable modules and themes"
-# echo -e "////////////////////////////////////////////////////"
+echo -e "////////////////////////////////////////////////////"
+echo -e "// Enable modules and themes"
+echo -e "////////////////////////////////////////////////////"
 
 # Enable modules
 ##########################################################
-# drush8 -y en \
-# admin_views \
-# backup_migrate \
-# ctools \
-# ckeditor \
-# ckeditor_link \
-# coder \
-# date \
-# devel \
-# diff \
-# entity \
-# eu_cookie_compliance \
-# features \
-# fences \
-# field_group \
-# globalredirect \
-# imce \
-# jquery_update \
-# libraries \
-# masquerade \
-# menu_block \
-# metatag \
-# module_filter \
-# navbar \
-# navbar_flush_cache \
-# pathauto \
-# redirect \
-# simplified_menu_admin \
-# social_media_links \
-# strongarm \
-# token \
-# views \
-# views_bulk_operations \
-# webform \
-# xmlsitemap \
-# zen;
+drush8 -y en \
+admin_toolbar \
+adminimal_admin_toolbar \
+adminimal_theme \
+backup_migrate \
+ctools \
+devel \
+diff \
+entity \
+eu_cookie_compliance \
+features \
+fences \
+field_group \
+globalredirect \
+imce \
+libraries \
+linkit \
+masquerade \
+menu_block \
+metatag \
+module_filter \
+pathauto \
+redirect \
+social_media_links \
+token \
+toolbar_anti_flicker \
+toolbar_menu \
+webform \
+simple_sitemap \
+basic;
 
-#  Call navbar makefile to download libraries dependecies
-##########################################################
-# drush8 make sites/all/modules/contrib/navbar/navbar.make.example --no-core --shallow-clone
-
-# echo -e "////////////////////////////////////////////////////"
-# echo -e "// Pre configure settings"
-# echo -e "////////////////////////////////////////////////////"
+# TODO
+echo -e "////////////////////////////////////////////////////"
+echo -e "// Pre configure settings"
+echo -e "////////////////////////////////////////////////////"
 
 # Pre configure settings
 ##########################################################
@@ -163,10 +146,12 @@ drush8 site-install -y standard --account-mail=$adminEmail --account-name=$Admin
 # drush8 vset -y user_pictures 0;
 # allow only admins to register users
 # drush8 vset -y user_register 0;
+# set site name
+drush8 cset system.site name $siteName -y;
 # set site slogan
-# drush8 vset -y site_slogan $siteSlogan;
+drush8 cset system.site slogan $siteSlogan -y;
 
-# drush8 vset admin_theme adminimal;
+drush8 cset system.theme admin adminimal -y;
 
 echo -e "////////////////////////////////////////////////////"
 echo -e "// Install Completed"
