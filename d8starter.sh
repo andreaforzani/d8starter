@@ -132,6 +132,16 @@ webform \
 simple_sitemap \
 basic;
 
+# # Enable secondary modules
+# ##########################################################
+drush8 -y en \
+admin_toolbar_tools \
+ctools_views \
+ctools_block \
+kint \
+features_ui \
+webform_ui;
+
 # TODO
 # echo -e "////////////////////////////////////////////////////"
 # echo -e "// Pre configure settings"
