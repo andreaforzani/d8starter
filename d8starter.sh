@@ -5,7 +5,7 @@ alias drush8='~/drush8/vendor/bin/drush'
 
 # Site
 ##########################################################
-siteName="YourSiteNAme"
+siteName="YourSiteName"
 siteSlogan="Your Site Slogan"
 siteLocale="en"
 ##########################################################
@@ -56,8 +56,8 @@ echo -e "////////////////////////////////////////////////////"
 echo -e "// Download modules and themes"
 echo -e "////////////////////////////////////////////////////"
 
-# Download modules and themes
-##########################################################
+# # Download modules and themes
+# ##########################################################
 drush8 -y dl \
 admin_toolbar \
 adminimal_admin_toolbar \
@@ -71,7 +71,6 @@ eu_cookie_compliance \
 features \
 fences \
 field_group \
-globalredirect \
 imce \
 libraries \
 linkit \
@@ -95,15 +94,14 @@ basic;
 # toolbar;
 
 mv modules/contrib/devel modules/devel;
-mv modules/contrib/coder modules/devel;
 mv modules/contrib/diff modules/devel;
 
 echo -e "////////////////////////////////////////////////////"
 echo -e "// Enable modules and themes"
 echo -e "////////////////////////////////////////////////////"
 
-# Enable modules
-##########################################################
+# # Enable modules
+# ##########################################################
 drush8 -y en \
 admin_toolbar \
 adminimal_admin_toolbar \
@@ -117,7 +115,6 @@ eu_cookie_compliance \
 features \
 fences \
 field_group \
-globalredirect \
 imce \
 libraries \
 linkit \
@@ -136,22 +133,22 @@ simple_sitemap \
 basic;
 
 # TODO
-echo -e "////////////////////////////////////////////////////"
-echo -e "// Pre configure settings"
-echo -e "////////////////////////////////////////////////////"
+# echo -e "////////////////////////////////////////////////////"
+# echo -e "// Pre configure settings"
+# echo -e "////////////////////////////////////////////////////"
 
-# Pre configure settings
-##########################################################
-# disable user pictures
-# drush8 vset -y user_pictures 0;
-# allow only admins to register users
-# drush8 vset -y user_register 0;
-# set site name
-drush8 cset system.site name $siteName -y;
-# set site slogan
-drush8 cset system.site slogan $siteSlogan -y;
+# # Pre configure settings
+# ##########################################################
+# # disable user pictures
+# # drush8 vset -y user_pictures 0;
+# # allow only admins to register users
+# # drush8 vset -y user_register 0;
+# # set site name
+# drush8 cset system.site name $siteName -y;
+# # set site slogan
+# drush8 cset system.site slogan $siteSlogan -y;
 
-drush8 cset system.theme admin adminimal -y;
+# drush8 cset system.theme admin adminimal -y;
 
 echo -e "////////////////////////////////////////////////////"
 echo -e "// Install Completed"
