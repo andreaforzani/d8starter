@@ -142,21 +142,21 @@ kint \
 features_ui \
 webform_ui;
 
-# TODO
-# echo -e "////////////////////////////////////////////////////"
-# echo -e "// Pre configure settings"
-# echo -e "////////////////////////////////////////////////////"
+
+echo -e "////////////////////////////////////////////////////"
+echo -e "// Pre configure settings"
+echo -e "////////////////////////////////////////////////////"
 
 # # Pre configure settings
 # ##########################################################
 # # disable user pictures
 # # drush8 vset -y user_pictures 0;
 # # allow only admins to register users
-# # drush8 vset -y user_register 0;
+drush8 cset system.site register admin_only -y;
 # # set site name
-# drush8 cset system.site name $siteName -y;
+drush8 cset system.site name $siteName -y;
 # # set site slogan
-# drush8 cset system.site slogan $siteSlogan -y;
+drush8 cset system.site slogan $siteSlogan -y;
 
 # drush8 cset system.theme admin adminimal -y;
 
