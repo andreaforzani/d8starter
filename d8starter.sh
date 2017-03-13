@@ -82,7 +82,7 @@ pathauto \
 redirect \
 social_media_links \
 token \
-toolbar_anti_flicker \
+# toolbar_anti_flicker \
 toolbar_menu \
 webform \
 simple_sitemap \
@@ -126,7 +126,7 @@ pathauto \
 redirect \
 social_media_links \
 token \
-toolbar_anti_flicker \
+# toolbar_anti_flicker \
 toolbar_menu \
 webform \
 simple_sitemap \
