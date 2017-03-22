@@ -82,7 +82,6 @@ pathauto \
 redirect \
 social_media_links \
 token \
-# toolbar_anti_flicker \
 toolbar_menu \
 webform \
 simple_sitemap \
@@ -126,7 +125,6 @@ pathauto \
 redirect \
 social_media_links \
 token \
-# toolbar_anti_flicker \
 toolbar_menu \
 webform \
 simple_sitemap \
@@ -139,8 +137,7 @@ admin_toolbar_tools \
 ctools_views \
 ctools_block \
 kint \
-features_ui \
-webform_ui;
+features_ui;
 
 
 echo -e "////////////////////////////////////////////////////"
