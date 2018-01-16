@@ -87,6 +87,7 @@ drupal/token \
 drupal/toolbar_menu \
 drupal/webform \
 drupal/simple_sitemap \
+drupal/environment_indicator \
 drupal/basic;
 
 echo -e "////////////////////////////////////////////////////"
@@ -122,6 +123,7 @@ token \
 toolbar_menu \
 webform \
 simple_sitemap \
+environment_indicator \
 basic;
 
 # # Enable secondary modules

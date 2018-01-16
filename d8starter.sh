@@ -85,6 +85,7 @@ token \
 toolbar_menu \
 webform \
 simple_sitemap \
+environment_indicator \
 basic;
 
 # Disable some core modules
@@ -128,6 +129,7 @@ token \
 toolbar_menu \
 webform \
 simple_sitemap \
+environment_indicator \
 basic;
 
 # # Enable secondary modules
