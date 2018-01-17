@@ -52,7 +52,7 @@ echo -e "////////////////////////////////////////////////////"
 
 # Install core
 ##########################################################
-drush8 site-install -y standard --account-mail=$adminEmail --account-name=$AdminUsername --account-pass=$AdminPassword --site-name=$siteName --site-mail=$adminEmail --locale=$siteLocale --db-url=mysql://$dbUser:$dbPassword@$dbHost/$dbName;
+drush8 site-install -y standard --account-mail=$adminEmail --account-name=$AdminUsername --account-pass=$AdminPassword --site-name="$siteName" --site-mail=$adminEmail --locale=$siteLocale --db-url=mysql://$dbUser:$dbPassword@$dbHost/$dbName;
 
 echo -e "////////////////////////////////////////////////////"
 echo -e "// Download modules and themes"
@@ -147,9 +147,9 @@ echo -e "////////////////////////////////////////////////////"
 # # allow only admins to register users
 drush8 cset system.site register admin_only -y;
 # # set site name
-drush8 cset system.site name $siteName -y;
+drush8 cset system.site name "$siteName" -y;
 # # set site slogan
-drush8 cset system.site slogan $siteSlogan -y;
+drush8 cset system.site slogan "$siteSlogan" -y;
 
 # drush8 cset system.theme admin adminimal -y;
 
